@@ -5,17 +5,17 @@ import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 const socials = [
   {
     name: 'GitHub',
-    url: 'https://github.com/29Niro',
+    url: 'https://github.com/fasfaisa',
     icon: <FaGithub />,
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/niroshan-pushparaj/',
+    url: 'https://www.linkedin.com/in/fathimafaisa/',
     icon: <FaLinkedin />,
   },
   {
     name: 'YouTube',
-    url: 'https://www.youtube.com/@TechKeyTamil-k4i',
+    url: '',
     icon: <FaYoutube />,
   },
 ];

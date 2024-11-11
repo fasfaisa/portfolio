@@ -14,48 +14,48 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Niroshan | Full-Stack Software Engineer | Web & Mobile Solutions',
+  title: 'Faisa | Full-Stack Software Engineer | Web & Mobile Solutions',
   description:
-    'Niroshan is a full-stack software engineer specializing in web and mobile application development, offering tailored solutions for businesses with a focus on performance, scalability, and mobile responsiveness.',
+    'Faisa is a full-stack software engineer specializing in web and mobile application development, offering tailored solutions for businesses with a focus on performance, scalability, and mobile responsiveness.',
   keywords:
-    'Niroshan, software engineer, full-stack developer, web development, mobile app development, React, Flutter, Tailwind CSS, JavaScript, SEO, cloud computing, custom solutions',
+    'Faisa, software engineer, full-stack developer, web development, mobile app development, React, Flutter, Tailwind CSS, JavaScript, SEO, cloud computing, custom solutions',
   openGraph: {
     type: 'website',
-    url: 'https://niro-dev.com/',
-    title: 'Niroshan | Full-Stack Software Engineer',
+    url: 'https://faisa-dev.com/',
+    title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
     images: [
       {
-        url: 'http://niro-dev.com/assets/og-image.png',
+        url: 'http://faisa-dev.com/assets/og-image.png',
         height: 630,
-        alt: 'Niroshan - Full-Stack Software Engineer',
+        alt: 'Faisa - Full-Stack Software Engineer',
       },
     ],
   },
   LinkedIn: {
-    title: 'Niroshan | Full-Stack Software Engineer',
+    title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
     images: [
       {
-        url: 'http://niro-dev.com/assets/og-image.png',
+        url: 'http://faisa-dev.com/assets/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Niroshan - Full-Stack Software Engineer',
+        alt: 'Faisa - Full-Stack Software Engineer',
       },
     ],
   },
   Facebook: {
-    title: 'Niroshan | Full-Stack Software Engineer',
+    title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
     images: [
       {
-        url: 'http://niro-dev.com/assets/og-image.png',
+        url: 'http://faisa-dev.com/assets/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Niroshan - Full-Stack Software Engineer',
+        alt: 'Faisa - Full-Stack Software Engineer',
       },
     ],
   },
