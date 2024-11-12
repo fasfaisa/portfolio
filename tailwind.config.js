@@ -25,10 +25,10 @@ module.exports = {
         secondary: 'var(--font-roboto)',
       },
       colors: {
-        primary: '#000435',
+        primary: '#29282C',
         accent: {
-          DEFAULT: '#00d9ff',
-          hover: '#00d6e1',
+          DEFAULT: '#f7BB0E',
+          hover: '#877710',
         },
       },
       borderRadius: {

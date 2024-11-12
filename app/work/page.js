@@ -2,49 +2,35 @@
 
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@radix-ui/react-tooltip';
+import { BsGithub, BsPlayCircle, BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
-import WorkSliderButtons from '@/components/ui/WorkSliderButtons';
-
 const projects = [
   {
-    num: '01',
-    title: 'Nivez Bridal',
-    category: 'Frontend',
-    description:
-      'The project "nivezbridal.com" is a fully responsive landing website developed for a bridal service business. Built using React and Tailwind CSS, it showcases the business\'s services and portfolio in an elegant and modern design. The website features seamless navigation, user-friendly layouts, and is optimized for both desktop and mobile devices. Integrated with EmailJS, it allows potential clients to easily contact the service for bookings and inquiries, ensuring a smooth user experience.',
-    stack: [{ name: 'React' }, { name: 'Tailwind CSS' }, { name: 'Email JS' }],
-    image: '/assets/work/nivez-bridal.png',
-    live: 'https://www.nivezbridal.com/',
-    github: 'https://github.com/29Niro/nivez-bridal',
+    title: 'Henna Ventures',
+    category: 'FullStack',
+    description: 'Henna Ventures was developed using the MERN stack to blend traditional mehendi artistry with modern technology. This platform includes a unique 3D model hand for virtual henna design customization, a marketplace for high-quality henna products, and options for customizable gift packages. Additional features such as appointment scheduling and artist verification create a seamless experience for users and empower artists.',
+    stack: ['React', 'Tailwind CSS','MongoDB', 'Express', 'Node.js'],
+    image: '/assets/work/henna.jpg',
+    live: '',
+    github: 'https://github.com/frfarhath/henna_ventures',
   },
   {
-    num: '02',
-    title: 'Devi Web',
-    category: 'Frontend',
+    title: 'BiteBlaze',
+    category: 'Full Stack',
     description:
-      'The project "deviweb.com" is a modern, fully responsive website designed to showcase professional services and digital solutions. Developed using cutting-edge technologies like React and Tailwind CSS, the site offers a sleek, user-friendly interface optimized for both desktop and mobile devices. With seamless navigation and intuitive layouts, "deviweb.com" effectively highlights key services, portfolio items, and client testimonials. Integrated with various interactive features, it ensures visitors can easily engage with the business, explore offerings, and make inquiries via integrated contact forms.',
-    stack: [{ name: 'React' }, { name: 'Tailwind CSS' }, { name: 'Email JS' }],
-    image: '/assets/work/devi-web.png',
-    live: 'https://www.deviweb.com/',
-    github: 'https://github.com/29Niro/react-landing-page',
+      'BiteBlaze is designed to streamline the food ordering experience. The secure sign-in system ensures that user data is protected. The platform supports CRUD operations, allowing both customers and restaurateurs to manage menus, orders, and payments efficiently. The intuitive dashboard provides valuable insights into order data through interactive tables. Built with a tech stack of React.js for a responsive front-end and Python with Django for a scalable back-end, BiteBlaze provides a smooth and dynamic user experience.',
+    stack: ['Tailwind CSS','React','Django'],
+    image: '/assets/work/biteblaze.jpeg',
+    live: '',
+    github: 'https://github.com/dilhanpathum/Biteblaze---Using-React-Django-RestApi',
   },
   {
-    num: '03',
     title: 'Capture Rings',
     category: 'Fullstack',
     description: 'The project "Capture Rings" is a comprehensive studio management website designed to streamline customer interactions and showcase the studio’s work. Customers can easily book time slots for photography sessions, purchase images, and browse through the showcased galleries. The platform features an admin panel where the studio can upload new galleries, manage blogs, and handle bookings. The user-facing side of the site is optimized for a smooth and engaging experience, making it easy for clients to explore services and make purchases. ',
@@ -58,109 +44,112 @@ const projects = [
     live: 'https://fasfaisa.github.io/capture-rings/',
     github: 'https://github.com/fasfaisa/capture-rings',
   },
+  // Additional projects...
 ];
 
 const Work = () => {
-  const [project, setProject] = useState(projects[0]);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
-  const handleSlideChange = (swiper) => {
-    setProject(projects[swiper.activeIndex]);
+  const handleNextProject = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
+
+  const handlePreviousProject = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  const project = projects[currentProjectIndex];
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 2.4,
-          duration: 0.4,
-          ease: 'easeIn',
-        },
-      }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.5 } }}
+      className="min-h-screen flex flex-col justify-center items-center py-12"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-8">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-8 h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              <h2 className="text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} Project
-              </h2>
-              <p className="text-white/60">{project.description}</p>
-              <ul>
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
-                    {item.name}
-                    {index < project.stack.length - 1 && ', '}
-                  </li>
-                ))}
-              </ul>
-              <div className="border border-white/20"></div>
-              <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent sideOffset={5} side="top" align="center">
-                        <p>live projects</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center xl:flex-row xl:justify-between gap-8">
+          <div className="w-full xl:w-1/2 text-center xl:text-left mb-8 xl:mb-0">
+            <h2 className="text-3xl font-semibold mt-4">{project.title}</h2>
+            <p className="text-gray-400 mt-2">{project.description}</p>
+            <ul className="flex flex-wrap gap-2 mt-4">
+  {project.stack.map((tech, index) => (
+    <li key={index} className="text-accent text-sm">
+      {tech.name || tech} {/* Check if tech is an object with a "name" property */}
+      {index < project.stack.length - 1 && ', '}
+    </li>
+  ))}
+</ul>
 
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-16 h-16 rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent sideOffset={5} side="top" align="center">
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
+            <div className="mt-6 flex gap-4 justify-center xl:justify-start">
+              <Link href={project.live} className="btn-primary">
+                <BsPlayCircle className="mr-2" /> Live Demo
+              </Link>
+              <Link href={project.github} className="btn-secondary">
+                <BsGithub className="mr-2" /> GitHub
+              </Link>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-              <WorkSliderButtons
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-2xl w-11 h-11 rounded-full flex justify-center items-center transition-all"
+          <div className="w-full xl:w-1/2 relative">
+            <div className="flex items-center justify-between absolute inset-y-1/2 w-full px-4 z-10">
+              <button onClick={handlePreviousProject} className="btn-nav">
+                <BsChevronLeft />
+              </button>
+              <button onClick={handleNextProject} className="btn-nav">
+                <BsChevronRight />
+              </button>
+            </div>
+            <div className="relative group rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src={project.image}
+                alt={project.title}
+                layout="responsive"
+                width={600}
+                height={400}
+                objectFit="cover"
+                className="rounded-lg"
               />
-            </Swiper>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .btn-primary,
+        .btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.5rem 1.5rem;
+          border-radius: 0.375rem;
+          font-weight: 600;
+          transition: background 0.3s ease;
+        }
+        .btn-primary {
+          background-color: #4f46e5;
+          color: white;
+        }
+        .btn-primary:hover {
+          background-color: #4338ca;
+        }
+        .btn-secondary {
+          background-color: #1f2937;
+          color: white;
+        }
+        .btn-secondary:hover {
+          background-color: #111827;
+        }
+        .btn-nav {
+          background: rgba(255, 255, 255, 0.6);
+          border-radius: 50%;
+          padding: 0.75rem;
+          font-size: 1.5rem;
+          color: #4f46e5;
+          transition: background 0.3s ease, color 0.3s ease;
+        }
+        .btn-nav:hover {
+          background: rgba(255, 255, 255, 0.9);
+          color: #4338ca;
+        }
+      `}</style>
     </motion.section>
   );
 };

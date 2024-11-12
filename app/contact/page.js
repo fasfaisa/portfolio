@@ -1,24 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
-
 import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com'; 
+import emailjs from 'emailjs-com';
 
 const info = [
   {
@@ -37,14 +25,11 @@ const info = [
     text: 'Vavuniya, Sri Lanka',
   },
 ];
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     subject: '',
-    service: '',
     message: '',
   });
 
@@ -59,137 +44,41 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setIsError(false);
-    setIsSuccess(false);
 
     try {
-      const response = await emailjs.send(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
-          to_name: 'Faisa', // or any recipient's name
-          from_name: 'Faisa Portfolio Site', // Sender's name
-          name: formData.name, // Sender's name
-          subject: formData.subject, // Subject from the form
-          service: formData.service, // Selected service from the form
-          message: formData.message, // The message from the form
-          email: formData.email, // Sender's email
-          phone: formData.phone, // Sender's phone number
+          ...formData,
         },
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       );
       setIsSuccess(true);
     } catch (error) {
-      console.error('Error sending email:', error);
       setIsError(true);
     } finally {
       setIsLoading(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        service: '',
-        message: '',
-      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     }
   };
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
-      }}
-      className="py-6"
+      animate={{ opacity: 1 }}
+      className="py-10 bg-[#27272c] text-white"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-8">
-          <div className="xl:h-1/2 order-2 xl:order-none">
-            <form
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-              onSubmit={sendEmail}
-            >
-              <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
-              <p className="text-white/60">
-                Reach out to discuss your project, ask questions, or
-                collaborate. I&apos;m here to help bring your ideas to life.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  label="Name"
-                  placeholder="Your Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-                <Input
-                  label="Email"
-                  placeholder="Your Email Address"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                <Input
-                  label="Phone"
-                  placeholder="Your Phone Number"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-                <Input
-                  label="Subject"
-                  placeholder="Subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <Select
-                name="service"
-                onValueChange={(value) =>
-                  setFormData({ ...formData, service: value })
-                }
-              >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="web-development">Web Development</SelectItem>
-                    <SelectItem value="mobile-development">Mobile App Development</SelectItem>
-                    <SelectItem value="ui-design">UI/UX Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-
-              <Textarea
-                className="h-52"
-                placeholder="Type your message here."
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-              />
-
-              <Button type="submit" size="md" className="max-w-40">
-                {isLoading ? 'Sending...' : 'Send Message'}
-              </Button>
-
-              {isSuccess && (
-                <p className="text-green-500">Message sent successfully!</p>
-              )}
-              {isError && (
-                <p className="text-red-500">Failed to send message.</p>
-              )}
-            </form>
-          </div>
-
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
+      <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
+        {/* Left Text Section */}
+        <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
+        <div className="flex-1 p-6 rounded-lg shadow-md">
+          <h2 className="text-3xl font-bold text-white">Let's chat.</h2>
+          <p className="mt-4 text-lg text-white-700">
+            Tell me about your project. Let’s create something together.
+          </p>
+         
+           <ul className="flex flex-col gap-10">
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
@@ -205,6 +94,46 @@ const Contact = () => {
               })}
             </ul>
           </div>
+          </div>
+        {/* Form Section */}
+        <div className="flex-1 bg-[#27272c] p-3sss rounded-lg shadow-md">
+          <form onSubmit={sendEmail} className="flex flex-col gap-6">
+            <h3 className="text-2xl font-bold">Send us a message 🚀</h3>
+            <Input
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <Input
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <Input
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+            <Textarea
+              name="message"
+              placeholder="Tell us more about your project"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="h-32"
+            />
+            <Button type="submit" className="bg-yellow-600 text-white mt-4">
+              {isLoading ? 'Sending...' : 'Send Message'}
+            </Button>
+            {isSuccess && <p className="text-green-500">Message sent successfully!</p>}
+            {isError && <p className="text-red-500">Failed to send message.</p>}
+          </form>
         </div>
       </div>
     </motion.section>
