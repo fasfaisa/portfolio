@@ -25,39 +25,20 @@ export const metadata = {
     title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
-    images: [
-      {
-        url: 'http://faisa-dev.com/assets/og-image.png',
-        height: 630,
-        alt: 'Faisa - Full-Stack Software Engineer',
-      },
-    ],
+    
   },
   LinkedIn: {
     title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
-    images: [
-      {
-        url: 'http://faisa-dev.com/assets/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Faisa - Full-Stack Software Engineer',
-      },
-    ],
+    
+  
   },
   Facebook: {
     title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',
-    images: [
-      {
-        url: 'http://faisa-dev.com/assets/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Faisa - Full-Stack Software Engineer',
-      },
-    ],
+   
   },
 };
 
