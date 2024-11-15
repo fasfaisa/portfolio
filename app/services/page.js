@@ -48,7 +48,7 @@ const Services = () => {
               <div className="absolute inset-0 -z-10 w-full h-full rounded-full border-4 border-dotted border-yellow-300 transform "></div>
               
               {/* Arc and Gradient Number */}
-              <div className="relative -top-8 w-20 h-20 rounded-full bg-gradient-to-br from-yellow-700 to-orange-500 flex items-center justify-center text-4xl font-bold text-white shadow-md">
+              <div className="relative -top-18 w-20 h-18 rounded-full bg-gradient-to-br from-yellow-700 to-orange-500 flex items-center justify-center text-4xl font-bold text-white shadow-md">
                 {service.num}
               </div>
 

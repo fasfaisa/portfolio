@@ -40,17 +40,17 @@ const education = {
   icon: FaHtml5,
   title: 'My Education',
   description:
-    'I hold a degree in "BSc (Hons) in Software Engineering" from University of Kelaniya, where I gained a strong foundation in software engineering principles and hands-on experience in developing innovative applications. My academic journey equipped me with technical expertise in full-stack development, mobile applications, and cloud-based solutions, all of which I apply in my professional projects.',
+    'currently pursuing a degree in Computer Science and Technology. Experienced in developing web applications with proven skills in managing group projects. Eager to apply my knowledge and skills in a hands-on internship opportunity to further enhance my expertise.',
   schools: [
     {
-      institution: 'University of Kelaniya',
-      degree: 'BSc (Hons) in Software Engineering',
-      duration: 'Feb 2020 - Apr 2024',
+      institution: 'Uva Wellasa University of SriLanka',
+      degree: 'BSc (Hons) in Computer Science & Technology',
+      duration: 'july 2021 - Aug 2025',
     },
     {
-      institution: 'V/Vavuniya Tamil M.M.V',
+      institution: 'V/Vavuniya Rambaikulam G.M.V',
       degree: 'Advanced Level',
-      duration: 'Jan 2017 - Dec 2018',
+      duration: 'Jan 2016 - Aug 2018',
     },
   ],
 };
@@ -68,10 +68,6 @@ const skills = {
     { name: 'Node.js', icon: <FaNodeJs /> },
     { name: 'Spring Boot', icon: <SiSpringboot /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-    {
-      name: 'Flutter',
-      icon: <SiFlutter />,
-    },
     { name: 'React Native', icon: <FaReact /> },
     { name: 'Figma', icon: <FaFigma /> },
     {name: 'AWS', icon: <FaAws/>}
@@ -124,7 +120,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-44 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-55 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{school.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
