@@ -10,7 +10,7 @@ const links = [
   { path: '/', label: 'Home' },
   { path: '/services', label: 'Services' },
   { path: '/resume', label: 'Resume' },
-  { path: '/work', label: 'Work' },
+  { path: '/work', label: 'Portfolio' },
   { path: '/contact', label: 'Contact' },
 ];
 

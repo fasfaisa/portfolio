@@ -19,9 +19,7 @@ const Home = () => {
               <span className="text-accent">Faisa</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I&apos;m a software engineer based in Sri Lanka. I specialize in
-              building exceptional digital experiences and I am proficient in
-              various programming languages and frameworks.
+              I&apos;m a passionate software engineer from Sri Lanka. I specialize in crafting innovative and impactful digital solutions, with expertise in diverse programming languages, frameworks, and cutting-edge technologies.
             </p>
 
             <div className="flex flex-col gap-8 xl:flex-row items-center">

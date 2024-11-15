@@ -4,9 +4,9 @@ import { Item } from '@radix-ui/react-select';
 import CountUp from 'react-countup';
 
 const stats = [
-  { title: 'Years of Experience', count: 2 },
+  { title: 'Years of Experience', count: 0 },
   { title: 'Projects completed', count: 6 },
-  { title: 'Code commits', count: 212 },
+  { title: 'Code commits', count: 225 },
   { title: 'Technologies', count: 8 },
 ];
 
