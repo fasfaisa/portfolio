@@ -73,9 +73,9 @@ const Contact = () => {
         {/* Left Text Section */}
         <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
         <div className="flex-1 p-6 rounded-lg shadow-md">
-          <h2 className="text-3xl font-bold text-white">Let's chat.</h2>
+          <h2 className="text-3xl font-bold text-white">Let us chat.</h2>
           <p className="mt-4 text-lg text-white-700">
-            Tell me about your project. Let’s create something together.
+            Tell me about your project. Let us create something together.
           </p>
          
            <ul className="flex flex-col gap-10">
