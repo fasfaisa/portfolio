@@ -8,7 +8,7 @@ const links = [
   { path: '/services', label: 'Services' },
   { path: '/resume', label: 'Resume' },
   { path: '/work', label: 'Portfolio' },
-  { path: '/contact', label: 'Contact' },
+  // { path: '/contact', label: 'Contact' },
 ];
 
 const Navbar = () => {

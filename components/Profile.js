@@ -31,7 +31,7 @@ const Profile = () => {
           className="w-[200px] h-[200px] xl:w-[400px] xl:h-[400px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/profile.png"
+            src="/assets/faisa.png"
             alt="Profile Picture"
             priority
             quality={100}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const socials = [
   {
@@ -14,9 +14,9 @@ const socials = [
     icon: <FaLinkedin />,
   },
   {
-    name: 'YouTube',
+    name: 'Facebook',
     url: '',
-    icon: <FaYoutube />,
+    icon: <FaFacebook />,
   },
 ];
 
