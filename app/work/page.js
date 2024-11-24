@@ -106,9 +106,9 @@ const Work = () => {
 </ul>
 
             <div className="mt-6 flex gap-4 justify-center xl:justify-start">
-              <Link href={project.live} className="btn-primary">
+              {/* <Link href={project.live} className="btn-primary">
                 <BsPlayCircle className="mr-2" /> Live Demo
-              </Link>
+              </Link> */}
               <Link href={project.github} className="btn-secondary">
                 <BsGithub className="mr-2" /> GitHub
               </Link>

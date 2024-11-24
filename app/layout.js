@@ -21,7 +21,7 @@ export const metadata = {
     'Faisa, software engineer, full-stack developer, web development, mobile app development, React, Flutter, Tailwind CSS, JavaScript, SEO, cloud computing, custom solutions',
   openGraph: {
     type: 'website',
-    url: 'https://faisa-dev.com/',
+    url: 'https://faisa.vercel.app/',
     title: 'Faisa | Full-Stack Software Engineer',
     description:
       'Specializing in full-stack web and mobile app development, delivering high-performance and scalable solutions.',

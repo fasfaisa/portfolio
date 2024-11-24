@@ -63,7 +63,7 @@ const Services = () => {
               </p>
 
               {/* Custom Button Style */}
-              <Link href={service.href} passHref>
+              {/* <Link href={service.href} passHref>
                 <motion.div
                   className="px-6 py-2 rounded-full bg-orange-600 text-white font-semibold hover:bg-yellow-500 transition-colors duration-300 shadow-lg"
                   whileHover={{ scale: 1.1 }}
@@ -71,7 +71,7 @@ const Services = () => {
                 >
                   Learn More
                 </motion.div>
-              </Link>
+              </Link> */}
             </div>
           ))}
         </motion.div>

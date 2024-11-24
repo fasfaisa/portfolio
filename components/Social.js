@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin, FaVoicemail, FaYoutube, FaEnvelope } from 'react-icons/fa';
 
 const socials = [
   {
@@ -13,11 +13,11 @@ const socials = [
     url: 'https://www.linkedin.com/in/fathimafaisa/',
     icon: <FaLinkedin />,
   },
-  {
-    name: 'Facebook',
-    url: '',
-    icon: <FaFacebook />,
-  },
+  // {
+  //   name: 'Email',
+  //   url: 'fathimafaisa00@gmail.com',
+  //   icon: <FaEnvelope />,
+  // },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {
