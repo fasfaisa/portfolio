@@ -43,7 +43,7 @@ const projects = [
     ],
     image: '/assets/work/Aurora.png',
     live: '',
-    github: 'https://github.com/fasfaisa/Aurora_Project1',
+    github: 'https://github.com/Eranga86/Aurora_Project1',
   },
   {
     title: 'Elezione',
